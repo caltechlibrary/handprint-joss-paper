@@ -7,6 +7,9 @@
 #
 # The contents of this file were obtained on 2022-03-29 from the web page at
 # https://github.com/marketplace/actions/open-journals-pdf-generator
+#
+# See https://joss.readthedocs.io/en/latest/submitting.html#github-action
+# for more information.
 # =============================================================================
 
 on: [push]
