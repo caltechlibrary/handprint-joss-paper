@@ -2,7 +2,7 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "description": "Repository for the source files corresponding to the JOSS paper submission for Handprint",
-  "name": "handprint-joss-paper",
+  "name": "Handprint JOSS paper source code",
   "codeRepository": "https://github.com/caltechlibrary/handprint-joss-paper",
   "issueTracker": "https://github.com/caltechlibrary/handprint-joss-paper/issues",
   "license": "https://github.com/caltechlibrary/handprint-joss-paper/blob/main/LICENSE",
