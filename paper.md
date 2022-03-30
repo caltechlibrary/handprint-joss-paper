@@ -17,21 +17,21 @@ bibliography: paper.bib
 
 # Summary
 
-Handprint (_**Hand**written **p**age **r**ecognit**i**o**n** **t**est_) is a command-line application that can invoke cloud-based services to perform handwritten text recognition (HTR) on images of documents. It accepts images in various popular formats, sends them to the service providers, gathers the results, and then annotates copies of the images to show the results to the user. It currently supports HTR services from Amazon [@AmazonInc.2022amazon; @AmazonInc.2022amazona], Google [@GoogleInc.2022googlea], and Microsoft [@MicrosoftInc.2022microsoft], but its architecture is modular and could be extended to other services. Handprint is a command-line program written in Python and can run on macOS, Windows, and Linux computers.
+Handprint (_**Hand**written **p**age **r**ecognit**i**o**n** **t**est_) is a command-line application that can invoke cloud-based services to perform handwritten text recognition (HTR) on images of documents. It accepts images in various popular formats, sends them to service providers, gathers the results, annotates copies of the images to show the results to the user, and optionally performs other operations. It currently supports HTR services from Amazon [@AmazonInc.2022amazon; @AmazonInc.2022amazona], Google [@GoogleInc.2022googlea], and Microsoft [@MicrosoftInc.2022microsoft], but its architecture is modular and could be extended to other services. Handprint is a command-line program written in Python and can run on macOS, Windows, and Linux computers.
 
 
 # Statement of need
 
 The goal of automating the recognition of text dates back, at minimum, to efforts in the 1950's to develop machines for banking applications [@Berkeley1956magnetic; @Dimond1957devices]. The early methods were extremely limited in scope: they focused essentially on numbers only. Thanks to decades of advances in machine learning, document analysis, and computing power, methods have become so advanced that they can now be used to recognize cursive handwriting in dozens of human languages [@Muehlberger2019transforming]. Today, handwritten text recognition (HTR) is even offered as a service by several computing companies over the Internet, on demand, for small fees---without the need to first train a system on samples of a person's handwriting. The recognition results are remarkably good overall, but there are differences in quality and features between the different offerings. Comparing the results produced by the competing services is complicated by the fact that they each have unique application programming interfaces (APIs).
 
-The purpose of Handprint is to help make comparisons easy, without the need for users to learn how to write program or work with the different APIs. With Handprint, users can easily test cloud-based HTR services on individual images, directories of images, and URLs pointing to images on remote servers, all without writing a line of code. If desired, users can also use Handprint in scripts as part of automated workflows.
+The purpose of Handprint is to make it easier to test HTR services and compare the results, without the need for users to learn how to write program or work with the different APIs. With Handprint, users can easily test cloud-based HTR services on individual images, directories of images, and URLs pointing to images on remote servers, all without writing a line of code. If desired, users can also use Handprint in scripts as part of automated workflows.
 
 
 # Summary of Handprint usage
 
 ## Configuration
 
-The only configuration necessary after installation is to run Handprint with a certain command-line option to store the user's account credentials for each cloud-based HTR service provider. The command needs to be run once for each desired provider, and thereafter, Handprint will use the account information automatically. The Handprint documentation at <https://caltechlibrary.github.io/handprint/> explains the simple file format in which the credentials need to be written.
+The only configuration necessary after installation is to run Handprint with a command-line option to store the user's account credentials for each cloud-based HTR service provider. The command needs to be run once for each desired provider, and thereafter, Handprint will use the account information automatically. The documentation at <https://caltechlibrary.github.io/handprint/> explains the simple file format in which the credentials need to be written.
 
 
 ## Basic features
@@ -53,9 +53,9 @@ Users can can opt to skip the creation of the overview grid image if they only n
 
 Handprint also includes additional, more advanced features, including the following:
 
-* Controlling the annotations overlaid on input images. Users can select whether to display recognized text, bounding boxes, or both, and which types of bounding boxes (word, line, and/or paragraph---note that not all services provide all types).
-* Filtering the results by confidence scores. This allows users to see which words or other components have confidence values that meet or exceed a chosen threshold.
-* Comparing text results to expected (ground truth) text. Users can supply a text file containing the expected text for a given image, and Handprint will calculate the number of errors and the character error rate for each line. The comparison algorithm has some novel capabilities, notably in how it can treat missing, extra, or transposed lines of text from the HTR results (a common difference between the outputs of different services).
+* _Controlling the style and placement annotations overlaid on input images_. Users control whether to display recognized text, bounding boxes, or both, and which types of bounding boxes (word, line, and/or paragraph---although not all services provide all types).
+* _Filtering the results by confidence scores_. This allows users to see which words or other components have confidence values that meet or exceed a chosen threshold.
+* _Comparing text results to expected (ground truth) text_. Users can supply a text file containing the expected text for a given image, and Handprint will calculate the number of errors and the character error rate for each line. The comparison algorithm has some novel capabilities, notably in how it can treat missing, extra, or transposed lines of text from the HTR results (a common difference between the outputs of different services).
 
 
 # Documentation
